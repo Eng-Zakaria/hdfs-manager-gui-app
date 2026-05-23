@@ -3,6 +3,12 @@
 A dark-themed desktop GUI for Apache Hadoop : built with Python and Tkinter.  
 Manage HDFS and your local Linux filesystem side by side, control Hadoop services, view and edit files, and run shell commands, all from one window.
 
+### Brief video for the app :  [![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=flat&logo=googledrive&logoColor=white)](https://drive.google.com/drive/folders/1fW_E3ws8w1HlagIENeNuyrkHdDtyFrLN?usp=drive_link)
+
+
+---
+
+
 ![Python](https://img.shields.io/badge/Python-3.7%2B-blue?style=flat-square&logo=python)
 ![Tkinter](https://img.shields.io/badge/GUI-Tkinter-informational?style=flat-square)
 ![Platform](https://img.shields.io/badge/Platform-Linux-lightgrey?style=flat-square&logo=linux)
