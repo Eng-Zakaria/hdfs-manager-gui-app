@@ -1,6 +1,6 @@
 # HDFS Manager
 
-A dark-themed desktop GUI for Apache Hadoop — built with Python and Tkinter.  
+A dark-themed desktop GUI for Apache Hadoop : built with Python and Tkinter.  
 Manage HDFS and your local Linux filesystem side by side, control Hadoop services, view and edit files, and run shell commands, all from one window.
 
 ![Python](https://img.shields.io/badge/Python-3.7%2B-blue?style=flat-square&logo=python)
@@ -15,7 +15,7 @@ Manage HDFS and your local Linux filesystem side by side, control Hadoop service
 | Area | What you can do |
 |---|---|
 | **Services** | Start, stop, restart HDFS and YARN independently or all at once. Live daemon monitor via `jps`. |
-| **Explorer** | Dual-pane file manager — local on the left, HDFS on the right. Navigate, create, rename, copy, move, delete on both sides. |
+| **Explorer** | Dual-pane file manager : local on the left, HDFS on the right. Navigate, create, rename, copy, move, delete on both sides. |
 | **Transfer** | Multi-select PUT and GET with skip-existing or overwrite modes. Works on files and directories equally. |
 | **Viewer** | cat, nl, head, tail, tail -f, wc, du, stat, strings, hexdump. In-viewer search with highlight. |
 | **Editors** | Open local files in nano or vim in a new terminal window directly from the GUI. |
@@ -28,10 +28,10 @@ Manage HDFS and your local Linux filesystem side by side, control Hadoop service
 | Dependency | Notes |
 |---|---|
 | Python 3.7+ | Tested on 3.7 and 3.9 |
-| Tkinter | Usually bundled with Python — see install note below |
+| Tkinter | Usually bundled with Python : see install note below |
 | Apache Hadoop | `hdfs`, `yarn`, and `jps` must be on your `$PATH` |
 | `$HADOOP_HOME` | Must point to your Hadoop installation directory |
-| xterm _(optional)_ | Used by the nano/vim launcher — falls back to gnome-terminal, konsole, etc. |
+| xterm _(optional)_ | Used by the nano/vim launcher : falls back to gnome-terminal, konsole, etc. |
 
 Install Tkinter if missing (Ubuntu/Debian):
 
@@ -48,7 +48,7 @@ sudo apt install python3-tk
 git clone https://github.com/eng-zakaria/hdfs-manager.git
 cd hdfs-manager
 
-# No pip install needed — pure stdlib + tkinter
+# No pip install needed : pure stdlib + tkinter
 python3 hdfs_manager.py
 ```
 
@@ -97,7 +97,7 @@ On **macOS**: install [XQuartz](https://www.xquartz.org/) first.
 
 ## How to Use
 
-### Tab 1 — Services
+### Tab 1 : Services
 
 Control HDFS and YARN from one place.
 
@@ -126,7 +126,7 @@ Control HDFS and YARN from one place.
 
 ---
 
-### Tab 2 — Explorer
+### Tab 2 : Explorer
 
 A dual-pane file manager. Local filesystem on the left, HDFS on the right.
 
@@ -146,11 +146,11 @@ Type any path in the **PATH** bar and press **Enter** or **GO** to jump there di
 
 #### Selecting Files
 
-- **Single-click** — select one item
-- **Ctrl + click** — add/remove items from the selection (multi-select)
-- **Shift + click** — select a range of items
-- **Double-click a directory** — navigate into it
-- **Double-click a file** — open it in the Viewer tab and `cat` it immediately
+- **Single-click** : select one item
+- **Ctrl + click** : add/remove items from the selection (multi-select)
+- **Shift + click** : select a range of items
+- **Double-click a directory** : navigate into it
+- **Double-click a file** : open it in the Viewer tab and `cat` it immediately
 
 #### Local Filesystem Operations
 
@@ -173,8 +173,8 @@ Type any path in the **PATH** bar and press **Enter** or **GO** to jump there di
 | `x Move` | Move selected items to another HDFS path |
 | `- Del` | Delete selected files (`hdfs dfs -rm`) |
 | `-- Rm-r` | Recursively delete directories (`hdfs dfs -rm -r`) |
-| `@ Chmod` | Change permissions — enter a mode like `755` |
-| `# Chown` | Change owner/group — enter `user` or `user:group` |
+| `@ Chmod` | Change permissions : enter a mode like `755` |
+| `# Chown` | Change owner/group : enter `user` or `user:group` |
 
 #### Transferring Files
 
@@ -196,19 +196,19 @@ Use the four **TRANSFER** buttons in the middle column between the two panes:
 To download, do the same in reverse: select items in the right pane, navigate the left pane to where you want them, then click **<- GET**.
 
 **Notes:**
-- PUT and GET work identically on files and directories — no special mode needed.
+- PUT and GET work identically on files and directories : no special mode needed.
 - When transferring multiple items, each one is processed one by one. If one fails the rest continue.
 - The **TRANSFER LOG** shows a live per-item status: `OK`, `SKIP (exists)`, or `FAIL` for every item, followed by a summary line.
 
 ---
 
-### Tab 3 — Viewer
+### Tab 3 : Viewer
 
 Inspect file contents without opening a separate terminal.
 
 #### Loading a File
 
-The easiest way is to **double-click any file** in the Explorer tab — the app switches to the Viewer, sets the path, and runs `cat` automatically.
+The easiest way is to **double-click any file** in the Explorer tab : the app switches to the Viewer, sets the path, and runs `cat` automatically.
 
 You can also load files manually:
 
@@ -241,7 +241,7 @@ Open local files directly in a full terminal editor:
 |---|---|
 | `nano` | nano in a new terminal window |
 | `vim` | vim in a new terminal window |
-| `vim read-only` | vim with `-R` flag — safe browsing, no accidental writes |
+| `vim read-only` | vim with `-R` flag : safe browsing, no accidental writes |
 
 > Editor buttons work on **local files only**. To edit an HDFS file: GET it to local, edit it, PUT it back.
 
@@ -265,7 +265,7 @@ Type a term in the **Search** box and press Enter or click **Find**. All matches
 
 ---
 
-### Tab 4 — Terminal
+### Tab 4 : Terminal
 
 Run any shell or HDFS command without leaving the app.
 
@@ -274,7 +274,7 @@ Run any shell or HDFS command without leaving the app.
 | Button | Command |
 |---|---|
 | `dfs -ls /` | List HDFS root directory |
-| `dfs report` | `hdfs dfsadmin -report` — cluster health summary |
+| `dfs report` | `hdfs dfsadmin -report` : cluster health summary |
 | `fs -df -h /` | HDFS total capacity and usage |
 | `dfs -du -h /` | Per-directory sizes under HDFS root |
 | `yarn node list` | List all YARN NodeManagers |
@@ -295,9 +295,9 @@ cat /etc/hadoop/core-site.xml
 echo $HADOOP_HOME
 ```
 
-- **Up arrow** — recall the previous command
-- **Down arrow** — go forward through history
-- **Clear** — wipe the output log
+- **Up arrow** : recall the previous command
+- **Down arrow** : go forward through history
+- **Clear** : wipe the output log
 
 All commands run in a background thread so the UI stays responsive.
 
@@ -339,7 +339,7 @@ hdfs_manager.py  (single file, no dependencies beyond stdlib + tkinter)
 └── HDFSManagerApp      Root Tk window, notebook tabs, wires everything together
 ```
 
-All long-running operations — service start/stop, HDFS directory listing, file transfers, view commands — run in **daemon threads**. UI updates are posted back to the main thread via `widget.after(0, fn)`, so the app never freezes or blocks.
+All long-running operations : service start/stop, HDFS directory listing, file transfers, view commands : run in **daemon threads**. UI updates are posted back to the main thread via `widget.after(0, fn)`, so the app never freezes or blocks.
 
 ---
 
@@ -355,7 +355,7 @@ Make sure `$HADOOP_HOME/bin` and `$HADOOP_HOME/sbin` are on your `$PATH` before 
 Install xterm: `sudo apt install xterm`
 
 **`character U+XXXXX is above the range allowed by Tcl`**  
-Your Python 3.7 Tcl/Tk does not support emoji. Make sure you are using the latest version of this file — it uses only ASCII characters.
+Your Python 3.7 Tcl/Tk does not support emoji. Make sure you are using the latest version of this file : it uses only ASCII characters.
 
 **`RuntimeError: main thread is not in main loop`**  
 A background thread made a direct tkinter call. All updates from threads must go through `widget.after(0, fn)`. Please open an issue if you encounter this.
@@ -366,8 +366,8 @@ A background thread made a direct tkinter call. All updates from threads must go
 
 Pull requests are welcome. A few guidelines:
 
-- Target **Python 3.7** — avoid walrus operator, f-string `=` syntax, or anything from 3.8+.
-- No characters above **U+FFFF** in string literals — Python 3.7's Tcl/Tk will crash with them.
+- Target **Python 3.7** : avoid walrus operator, f-string `=` syntax, or anything from 3.8+.
+- No characters above **U+FFFF** in string literals : Python 3.7's Tcl/Tk will crash with them.
 - All tkinter updates that happen inside a thread **must** use `widget.after(0, fn)`.
 - Keep it a **single file** with zero third-party dependencies.
 
@@ -375,4 +375,4 @@ Pull requests are welcome. A few guidelines:
 
 ## License
 
-MIT — use it, modify it, ship it.
+MIT : use it, modify it, ship it.
